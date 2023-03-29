@@ -56,10 +56,10 @@ export default function Carousel() {
     //make initial value to avoid some bug if condition not true
     let intervalId = null;
     if (index < img.length - 1) {
-      intervalId = setInterval(() => {
+      intervalId = setTimeout(() => {
         //update state based on previous value
         setIndex((prevIndex) => prevIndex + 1);
-      }, 1500);
+      }, 1000);
     }
     return () => {
       //ensure intervalId not null, because this call back execute after every render
@@ -83,7 +83,8 @@ export default function Carousel() {
             <img
               src={img[index].img}
               key={index}
-              className="absolute top-0 left-0 w-full h-full object-fit opacity-90"
+              className="absolute top-0 left-0 w-full h-full object-fit opacity-90 "
+              style={{ transition: "opacity 0.5s ease-in-out" }}
             ></img>
             <div className="absolute inset-0 flex items-center justify-center ">
               <p className="text-white text-xl font-bold">
