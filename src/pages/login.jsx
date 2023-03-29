@@ -69,6 +69,7 @@ export default function Login() {
 
   const onSuccess = async (credentialResponse) => {
     if (credentialResponse) {
+      document.body.style.overflowX = "hidden";
       try {
         const { data } = await axios.post(
           "https://plog-iti.onrender.com/api/v1/auth/googleLogin",
@@ -101,6 +102,7 @@ export default function Login() {
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content flex-col lg:flex-row-reverse">
+          <ToastContainer />
           <img
             src="/images/login.gif"
             className="max-w-md rounded-lg shadow-2xl img "
@@ -174,7 +176,6 @@ export default function Login() {
                   create new account account
                 </Link>
               </label>
-              <ToastContainer />
             </form>
           </div>
         </div>
