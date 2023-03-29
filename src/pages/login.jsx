@@ -70,7 +70,7 @@ export default function Login() {
       <div
         className="hero "
         style={{
-          backgroundImage: `url("src/assets/images/reset.svg")`,
+          backgroundImage: `url("/reset.svg")`,
           minHeight: "100vh",
         }}
       >
