@@ -46,6 +46,16 @@ export default function Home({
                 </div>
               </div>
             </div>
+            <div className="flex justify-center">
+              <div className="stats shadow">
+                <div className="stat">
+                  <div className="stat-title">Total Posts </div>
+                  <div className="stat-value text-center">
+                    {postData.length}
+                  </div>
+                </div>
+              </div>
+            </div>
             <Card
               postData={postData}
               setPostData={setPostData}

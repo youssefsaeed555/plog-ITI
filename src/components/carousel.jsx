@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Carousel() {
   const [index, setIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const img = [
     {
@@ -32,6 +33,25 @@ export default function Carousel() {
       caption: "The actors aren't the only stars I'm seeing tonight.",
     },
   ];
+
+  useEffect(() => {
+    // create array of promises that will be resolved when each image has finished loading
+    Promise.all(
+      img.map((image) => {
+        return new Promise((resolve, reject) => {
+          const imgs = new Image();
+          //set imgs url
+          imgs.src = image.img;
+          //fire when browser load
+          imgs.onload = resolve;
+          imgs.onerror = reject;
+        });
+      })
+    ).then(() => {
+      setImagesLoaded(true);
+    });
+  }, []);
+
   useEffect(() => {
     //make initial value to avoid some bug if condition not true
     let intervalId = null;
@@ -56,17 +76,23 @@ export default function Carousel() {
   }, [index]);
 
   return (
-    <div className=" carousel carousel-center rounded-box ">
-      <div id="item1" className="carousel-item ">
-        <img
-          src={img[index].img}
-          key={index}
-          className="absolute top-0 left-0 w-full h-full object-fit opacity-90"
-        ></img>
-        <div className="absolute inset-0 flex items-center justify-center ">
-          <p className="text-white text-xl font-bold">{img[index].caption}</p>
+    <>
+      {imagesLoaded && (
+        <div className=" carousel carousel-center rounded-box ">
+          <div id="item1" className="carousel-item ">
+            <img
+              src={img[index].img}
+              key={index}
+              className="absolute top-0 left-0 w-full h-full object-fit opacity-90"
+            ></img>
+            <div className="absolute inset-0 flex items-center justify-center ">
+              <p className="text-white text-xl font-bold">
+                {img[index].caption}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
