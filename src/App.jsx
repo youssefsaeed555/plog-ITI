@@ -15,6 +15,7 @@ import ResetPassword from "./pages/resetPassword";
 import VerifyCode from "./pages/verifyCode";
 import ChangePassword from "./pages/changePassword";
 import NotFound from "./pages/404";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function App() {
   //can't remove authToken, userId because it destruct array based on its index
@@ -36,67 +37,72 @@ function App() {
 
   return (
     <>
-      <EditPostsProvider>
-        <EditPhotoProvider>
-          <BrowserRouter>
-            <Header
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-            ></Header>
-            <Routes>
-              <Route
-                path="/login"
-                element={<Login logged={logged}></Login>}
-              ></Route>
-              <Route path="/resetPassword" element={<ResetPassword />}></Route>
-              <Route path="/verifyCode" element={<VerifyCode />}></Route>
-              <Route
-                path="/changePassword"
-                element={<ChangePassword />}
-              ></Route>
-              <Route path="/register" element={<Register></Register>}></Route>
-              <Route element={<ProtectRoute auth={logged} />}>
+      <GoogleOAuthProvider clientId="154586784948-llp5irti4qcc37h2a0b6j7lr5fddr2k1.apps.googleusercontent.com">
+        <EditPostsProvider>
+          <EditPhotoProvider>
+            <BrowserRouter>
+              <Header
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              ></Header>
+              <Routes>
                 <Route
-                  path="/"
-                  element={
-                    <Home
-                      postData={postData}
-                      setPostData={setPostData}
-                      handleDeletePost={handleDeletePost}
-                      handleAddPost={handleAddPost}
-                      searchQuery={searchQuery}
-                    />
-                  }
+                  path="/login"
+                  element={<Login logged={logged}></Login>}
                 ></Route>
                 <Route
-                  path="/post/:id"
-                  element={
-                    <GetPost
-                      postsData={postData}
-                      setPostsData={setPostData}
-                      handleDeletePost={handleDeletePost}
-                    />
-                  }
+                  path="/resetPassword"
+                  element={<ResetPassword />}
                 ></Route>
+                <Route path="/verifyCode" element={<VerifyCode />}></Route>
                 <Route
-                  path="/myPosts"
-                  element={
-                    <MyPosts
-                      postData={postData}
-                      setPostData={setPostData}
-                      handleDeletePost={handleDeletePost}
-                      handleAddPost={handleAddPost}
-                      searchQuery={searchQuery}
-                    ></MyPosts>
-                  }
+                  path="/changePassword"
+                  element={<ChangePassword />}
                 ></Route>
-                <Route path="/profile" element={<Profile></Profile>}></Route>
-              </Route>
-              <Route path="*" element={<NotFound></NotFound>}></Route>
-            </Routes>
-          </BrowserRouter>
-        </EditPhotoProvider>
-      </EditPostsProvider>
+                <Route path="/register" element={<Register></Register>}></Route>
+                <Route element={<ProtectRoute auth={logged} />}>
+                  <Route
+                    path="/"
+                    element={
+                      <Home
+                        postData={postData}
+                        setPostData={setPostData}
+                        handleDeletePost={handleDeletePost}
+                        handleAddPost={handleAddPost}
+                        searchQuery={searchQuery}
+                      />
+                    }
+                  ></Route>
+                  <Route
+                    path="/post/:id"
+                    element={
+                      <GetPost
+                        postsData={postData}
+                        setPostsData={setPostData}
+                        handleDeletePost={handleDeletePost}
+                      />
+                    }
+                  ></Route>
+                  <Route
+                    path="/myPosts"
+                    element={
+                      <MyPosts
+                        postData={postData}
+                        setPostData={setPostData}
+                        handleDeletePost={handleDeletePost}
+                        handleAddPost={handleAddPost}
+                        searchQuery={searchQuery}
+                      ></MyPosts>
+                    }
+                  ></Route>
+                  <Route path="/profile" element={<Profile></Profile>}></Route>
+                </Route>
+                <Route path="*" element={<NotFound></NotFound>}></Route>
+              </Routes>
+            </BrowserRouter>
+          </EditPhotoProvider>
+        </EditPostsProvider>
+      </GoogleOAuthProvider>
     </>
   );
 }

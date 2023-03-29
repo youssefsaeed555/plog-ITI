@@ -9,6 +9,7 @@ import Loader from "../components/loader";
 import useGuard from "../hooks/guard";
 import Mail from "../components/mail";
 import Password from "../components/password";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
   //states
@@ -64,6 +65,30 @@ export default function Login() {
       toast.error(error);
     }
     setLoading(false);
+  };
+
+  const onSuccess = async (credentialResponse) => {
+    if (credentialResponse) {
+      try {
+        const { data } = await axios.post(
+          "https://plog-iti.onrender.com/api/v1/auth/googleLogin",
+          { googleToken: credentialResponse.credential }
+        );
+        if (data.message == "login success") {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          toast.success("login success");
+          setTimeout(() => {
+            window.location.href = "/";
+            window.location.replace = true;
+          }, 1500);
+        }
+      } catch (err) {
+        if (err.response) {
+          toast.error(err.response.data.message);
+        }
+      }
+    }
   };
   return (
     <>
@@ -123,7 +148,6 @@ export default function Login() {
                   forgotten password?
                 </Link>
               </label>
-
               <div className="form-control mt-6">
                 {loading === true ? (
                   <span className="btn btn-primary">
@@ -132,6 +156,12 @@ export default function Login() {
                 ) : (
                   <button className="btn btn-primary">Login</button>
                 )}
+              </div>
+              <span className="flex justify-center pt-2 text-white font-bold">
+                or
+              </span>
+              <div className="pt-4 pl-24">
+                <GoogleLogin onSuccess={onSuccess} />
               </div>
               <label className="label">
                 <span className="my-2 text-white">
