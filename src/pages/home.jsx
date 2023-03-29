@@ -23,7 +23,7 @@ export default function Home({
       >
         <div
           className="hero"
-          style={{ backgroundImage: `url("../src/assets/images/reset.svg")` }}
+          style={{ backgroundImage: `url("/images/reset.svg")` }}
         >
           <div className="hero-overlay bg-opacity-60"></div>{" "}
           <div className="container mx-auto max-w-7xl">

@@ -5,30 +5,30 @@ export default function Carousel() {
 
   const img = [
     {
-      img: "../src/assets/movies/8.jpg",
+      img: "/movies/8.jpg",
       caption:
         "We go together like movies and popcorn. When the sun sets, the movie begins.",
     },
     {
-      img: "../src/assets/movies/7.jpg",
+      img: "/movies/7.jpg",
       caption: "It may sound corny, but movie nights with you are my favorite.",
     },
     {
-      img: "../src/assets/movies/4.jpg",
+      img: "/movies/4.jpg",
       caption: "I don't know if I can ever go back to watching a movie inside.",
     },
     {
-      img: "../src/assets/movies/9.jpg",
+      img: "/movies/9.jpg",
       caption:
         "Every time I go to a movie, it's magic, no matter what the movie's about.",
     },
     {
-      img: "../src/assets/movies/6.jpg",
+      img: "/movies/6.jpg",
       caption:
         "Watching movie stars under the stars, Shhh the show's about to begin",
     },
     {
-      img: "../src/assets/movies/3.jpg",
+      img: "/movies/3.jpg",
       caption: "The actors aren't the only stars I'm seeing tonight.",
     },
   ];

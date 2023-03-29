@@ -86,7 +86,7 @@ export default function Register() {
       <div
         className="hero "
         style={{
-          backgroundImage: `url("../src/assets/images/reset.svg")`,
+          backgroundImage: `url("/images/reset.svg")`,
           minHeight: "100vh",
         }}
       >
@@ -94,7 +94,7 @@ export default function Register() {
 
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
-            src="../../src/assets/images/an.gif"
+            src="/images/an.gif"
             className="max-w-lg rounded-lg shadow-2xl"
           />
           <div>

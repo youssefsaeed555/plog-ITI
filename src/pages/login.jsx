@@ -70,14 +70,14 @@ export default function Login() {
       <div
         className="hero "
         style={{
-          backgroundImage: `url("/reset.svg")`,
+          backgroundImage: `url("/images/reset.svg")`,
           minHeight: "100vh",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
-            src="../../src/assets/images/login.gif"
+            src="/images/login.gif"
             className="max-w-md rounded-lg shadow-2xl img "
           />
           <div className="card-body">

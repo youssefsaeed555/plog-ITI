@@ -78,7 +78,7 @@ export default function ChangePassword() {
     <div
       className="hero "
       style={{
-        backgroundImage: `url("../src/assets/images/reset.svg")`,
+        backgroundImage: `url("/images/reset.svg")`,
         minHeight: "100vh",
       }}
     >

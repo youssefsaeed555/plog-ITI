@@ -67,7 +67,7 @@ const GetPost = ({ handleDeletePost, postsData, setPostsData }) => {
       <div
         className="hero "
         style={{
-          backgroundImage: `url("../src/assets/images/reset.svg")`,
+          backgroundImage: `url("/images/reset.svg")`,
           minHeight: "100vh",
         }}
       >
