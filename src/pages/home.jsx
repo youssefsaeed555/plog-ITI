@@ -39,14 +39,14 @@ export default function Home({
                   <h1 className="text-4xl font-bold">
                     welcome in our movie plog
                   </h1>
-                  <p className="py-5 text-base">
+                  <p className="py-3 text-base">
                     The Official Home of Correct Movie Opinions, Go behind the
                     scenes of your favorite movies with on-set reporting
                   </p>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center pb-8">
               <div className="stats shadow">
                 <div className="stat">
                   <div className="stat-title">Total Posts </div>

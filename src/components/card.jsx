@@ -81,7 +81,7 @@ export default function Card({
       <div className="grid grid-cols-2 gap-1">
         {loading === true ? (
           <div className="ml-auto flex">
-            <span className="text-white font-bold">loading </span>
+            <span className="text-white font-bold pr-1">loading </span>
             <Loader></Loader>
           </div>
         ) : (
