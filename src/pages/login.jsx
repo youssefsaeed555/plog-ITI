@@ -71,6 +71,7 @@ export default function Login() {
     if (credentialResponse) {
       document.body.style.overflowX = "hidden";
       try {
+        setLoading(true);
         const { data } = await axios.post(
           "https://plog-iti.onrender.com/api/v1/auth/googleLogin",
           { googleToken: credentialResponse.credential }
@@ -89,6 +90,7 @@ export default function Login() {
           toast.error(err.response.data.message);
         }
       }
+      setLoading(false);
     }
   };
   return (

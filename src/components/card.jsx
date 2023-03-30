@@ -92,7 +92,7 @@ export default function Card({
                   <div className="flex justify-between align-middle items-center px-6">
                     <div className="flex justify-center align-middle py-2">
                       <div className="w-10 rounded-full">
-                        {item.user.profileImg ? (
+                        {item.user?.profileImg ? (
                           <img
                             src={item.user.profileImg}
                             className="w-13 h-11 rounded-full"
@@ -102,11 +102,11 @@ export default function Card({
                         )}
                       </div>
                       <span className=" ml-3 pt-2 font-bold">
-                        {item.user.userName}
+                        {item.user?.userName}
                       </span>
                     </div>
                     <div className="flex justify-center align-middle">
-                      {item.user._id === userId?._id ? (
+                      {item.user?._id === userId?._id ? (
                         <>
                           <Edit
                             posts={postData}
