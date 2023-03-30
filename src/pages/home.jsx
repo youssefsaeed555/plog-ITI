@@ -51,7 +51,7 @@ export default function Home({
                 <div className="stat">
                   <div className="stat-title">Total Posts </div>
                   <div className="stat-value text-center">
-                    {postData.length}
+                    {postData?.length}
                   </div>
                 </div>
               </div>
