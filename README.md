@@ -32,7 +32,7 @@ Movie Plog is a web application built using React.js and tailwind that allows us
 
 -  if you want to ediy your profile only click in your photo in header and choose "my profile"
 
--if you forget password you can click forrgten password in login page then input your email to send you code to enable you update the password.
+- if you forget password you can click forrgten password in login page then input your email to send you code to enable you update the password.
 
 
 
