@@ -23,6 +23,19 @@ Movie Plog is a web application built using React.js and tailwind that allows us
 8. DaisyUI
 
 
+# Usage
+- Once the application is running, you can create a new user account by clicking on the "Sign Up" link if you haven't account, or login with google direct. After registering and logging in, you can create new movie post by clicking on the "+" button on the homepage.
+
+- you can see all posts in home page, there are two buttons to edit and delete if you create this post.
+
+- if you want to see your posts only click in your photo in header and choose "my posts"
+
+-  if you want to ediy your profile only click in your photo in header and choose "my profile"
+
+-if you forget password you can click forrgten password in login page then input your email to send you code to enable you update the password.
+
+
+
 # Installation
 1. Clone the repository 
 2. Install dependencies with npm install
