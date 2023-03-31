@@ -3,24 +3,24 @@ Movie Plog is a web application built using React.js and tailwind that allows us
 
 
 # Features
-User can login by pervious registerd account or using google authentication.
-Enabled users to reset their password by sending them a verification email.
-Discover new movie news by creating post and search for movies you want.
-View detailed about any movie post.
-Enable user to edit or delete his posts only.
-user can view the posts he created previously.
-User profile page that enable user to edit his data, photo, and password.
-Responsive design for mobile and desktop screens.
+1. User can login by pervious registerd account or using google authentication.
+2. Enabled users to reset their password by sending them a verification email.
+3. Discover new movie news by creating post and search for movies you want.
+4. View detailed about any movie post.
+5. Enable user to edit or delete his posts only.
+6. user can view the posts he created previously.
+7. User profile page that enable user to edit his data, photo, and password.
+8. Responsive design for mobile and desktop screens.
 
 # Technologies
-React.js
-React oauth google
-Axios
-React Router
-React responsive modal
-Tailwind CSS
-Heroicons
-DaisyUI
+1. React.js
+2. React oauth google
+3. Axios
+4. React Router
+5. React responsive modal
+6. Tailwind CSS
+7. Heroicons
+8. DaisyUI
 
 
 # Installation
