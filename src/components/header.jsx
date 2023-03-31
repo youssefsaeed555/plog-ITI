@@ -64,7 +64,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
                   <input
                     type="text"
                     placeholder="Search"
-                    className="input input-bordered"
+                    className="input input-bordered w-44"
                     value={searchQuery}
                     onChange={handleSearchChange}
                   />
@@ -73,13 +73,13 @@ export default function Header({ searchQuery, setSearchQuery }) {
             )}
 
           {!location.pathname.startsWith("/resetPassword") && (
-            <div className="navbar-end">
-              <span className="text-lg text-white font-bold">
+            <div className="navbar-end flex-wrap ">
+              <span className="text-base md:text-lg text-white font-bold">
                 {user?.userName}
               </span>
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
+                  <div className="w-9 rounded-full">
                     {user?.profileImg ? (
                       <img src={user?.profileImg} />
                     ) : (
@@ -89,7 +89,7 @@ export default function Header({ searchQuery, setSearchQuery }) {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-48"
                 >
                   <li>
                     <Link to="/profile" className="justify-between">

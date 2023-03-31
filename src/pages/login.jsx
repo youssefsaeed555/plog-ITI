@@ -107,13 +107,13 @@ export default function Login() {
           <ToastContainer />
           <img
             src="/images/login.gif"
-            className="max-w-md rounded-lg shadow-2xl img "
+            className="max-w-xs md:max-w-md rounded-lg shadow-2xl img "
           />
           <div className="card-body">
-            <h1 className="text-4xl text-center text-white">
+            <h1 className="text-2xl md:text-4xl text-center text-white">
               Login your account
             </h1>
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className="flex flex-col w-64 md:w-full">
               <div className="flex m-2">
                 <Input
                   type="email"
@@ -158,13 +158,15 @@ export default function Login() {
                     loading {<Loader> </Loader>}
                   </span>
                 ) : (
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn btn-primary w-56 ml-4 md:w-full md:ml-0">
+                    Login
+                  </button>
                 )}
               </div>
               <span className="flex justify-center pt-2 text-white font-bold">
                 or
               </span>
-              <div className="pt-4 pl-24">
+              <div className="pt-4 pl-6 md:pl-24">
                 <GoogleLogin onSuccess={onSuccess} />
               </div>
               <label className="label">

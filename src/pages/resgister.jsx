@@ -95,13 +95,13 @@ export default function Register() {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="/images/an.gif"
-            className="max-w-lg rounded-lg shadow-2xl"
+            className="max-w-xs md:max-w-lg rounded-lg shadow-2xl"
           />
           <div>
-            <h1 className="text-5xl text-center text-white">
+            <h1 className="text-2xl md:text-5xl text-center text-white">
               Register new account
             </h1>
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className="flex flex-col w-64 md:w-full">
               <div className="flex m-2">
                 <Input
                   type="text"
@@ -174,7 +174,9 @@ export default function Register() {
                     loading {<Loader> </Loader>}
                   </span>
                 ) : (
-                  <button className="btn btn-primary">Register</button>
+                  <button className="btn btn-primary md:w-full md:ml-0">
+                    Register
+                  </button>
                 )}
               </div>
             </form>

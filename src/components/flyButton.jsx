@@ -114,7 +114,7 @@ export default function FlyButton({ handleAddPost }) {
   return (
     <>
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full fixed bottom-0 right-0 m-4"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full fixed bottom-0 lg:right-0 lg:m-4 sm:m-4"
         onClick={onOpenModal}
       >
         +

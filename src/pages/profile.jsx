@@ -98,7 +98,6 @@ export default function Profile() {
         toast.success("photo update successfully");
       }
     } catch (err) {
-      console.dir(err);
       let newError = [];
       if (err.errors) {
         newError = err.errors.map((err) => err);
@@ -285,19 +284,23 @@ export default function Profile() {
         className="hero "
         style={{
           backgroundImage: `url("/images/reset.svg")`,
-          minHeight: "68vh",
+          minHeight: "68.4vh",
+          height: "auto",
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 gap-6 p-10">
-            <div className="btn-group btn-group-vertical p-6 ">
+        <div
+          className="container mx-auto max-w-7xl"
+          style={{ maxWidth: "100%" }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10">
+            <div className="btn-group btn-group-vertical p-4 md:p-6">
               {buttons.map((item, idx) => {
                 return (
                   <button
                     className={`btn ${
                       current === idx + 1 ? "btn-active" : ""
-                    } btn-wide p-14`}
+                    } btn-wide p-8 md:p-14 `}
                     value={idx + 1}
                     onClick={handleCurrent}
                     key={idx}
@@ -309,10 +312,10 @@ export default function Profile() {
             </div>
             <div className="flex pt-10">
               <ToastContainer />
-              <div className="w-64 h-64 ">
+              <div className="md:w-64 h-64 ">
                 {current === 1 && (
                   <>
-                    <form onSubmit={handleUserData}>
+                    <form onSubmit={handleUserData} className="ml-10 md:ml-0">
                       <div className="flex">
                         <Input
                           type="email"
@@ -348,10 +351,10 @@ export default function Profile() {
                           <button className="btn btn-primary">update</button>
                         )}
                       </div>
-                      <div className="text-white pt-5 pl-5">
+                      <div className="text-white pt-3 pl-5">
                         <p>Do you want to delete account?</p>
                       </div>
-                      <div className="form-control mt-6">
+                      <div className="form-control mt-3">
                         <button
                           className="btn btn-error text-white"
                           type="button"
@@ -369,7 +372,7 @@ export default function Profile() {
                       {user.profileImg ? (
                         <img
                           src={user.profileImg}
-                          className="w-56 h-56 rounded-full"
+                          className="w-52 h-52 rounded-full"
                         ></img>
                       ) : (
                         <Avatar width={17} />
@@ -377,7 +380,7 @@ export default function Profile() {
                     </div>
                     <input
                       type="file"
-                      className="file-input file-input-bordered file-input-info max-w-xl  m-1"
+                      className="file-input file-input-bordered file-input-info max-w-xl m-3"
                       name="profileImg"
                       id="profileImg"
                       onChange={(e) => {
@@ -387,14 +390,14 @@ export default function Profile() {
                       }}
                     />
 
-                    <div className="form-control mt-6">
+                    <div className="form-control mt-1">
                       {loading === true ? (
-                        <span className="btn btn-primary btn-wide ml-7">
+                        <span className="btn btn-primary btn-wide ml-6">
                           loading {<Loader> </Loader>}
                         </span>
                       ) : (
                         <button
-                          className="btn btn-primary btn-wide ml-7"
+                          className="btn btn-primary btn-wide ml-6"
                           onClick={handleChangePhoto}
                         >
                           update photo
@@ -405,7 +408,10 @@ export default function Profile() {
                 )}
                 {current === 3 && (
                   <>
-                    <form onSubmit={handleChangePassword}>
+                    <form
+                      onSubmit={handleChangePassword}
+                      className="ml-10 md:ml-0"
+                    >
                       <Input
                         type="password"
                         id="currentPassword"
