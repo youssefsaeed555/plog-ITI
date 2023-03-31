@@ -59,7 +59,7 @@ export default function Carousel() {
       intervalId = setTimeout(() => {
         //update state based on previous value
         setIndex((prevIndex) => prevIndex + 1);
-      }, 1000);
+      }, 2000);
     }
     return () => {
       //ensure intervalId not null, because this call back execute after every render
