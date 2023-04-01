@@ -10,7 +10,6 @@ Movie Plog is a web application built using React.js and tailwind that allows us
 5. Enable user to edit or delete his posts only.
 6. user can view the posts he created previously.
 7. User profile page that enable user to edit his data, photo, and password.
-8. Responsive design for mobile and desktop screens.
 
 # Technologies
 1. React.js
